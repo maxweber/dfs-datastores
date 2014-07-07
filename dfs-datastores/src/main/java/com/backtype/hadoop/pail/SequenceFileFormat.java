@@ -130,8 +130,10 @@ public class SequenceFileFormat implements PailFormat {
              */
             for(int i=0; i<NUM_TRIES; i++) {
                 try {
+                    String key = split.getPath().getName().replaceFirst("\\.pailfile", "")
+                                 + "_" + getPos();
                     boolean ret = delegate.next(v, NullWritable.get());
-                    k.set(split.getPailRelPath());
+                    k.set(key);
                     recordsRead++;
                     return ret;
                 } catch(EOFException e) {
