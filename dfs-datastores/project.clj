@@ -1,7 +1,4 @@
-(def ROOT-DIR (subs *file* 0 (- (count *file*) (count "project.clj"))))
-(def VERSION (-> ROOT-DIR (str "/../VERSION") slurp))
-
-(defproject com.backtype/dfs-datastores VERSION
+(defproject com.backtype/dfs-datastores "1.3.7-SNAPSHOT"
   :description "Dead-simple vertical partitioning, compression, appends, and consolidation of data on a distributed filesystem."
   :url "https://github.com/nathanmarz/dfs-datastores"
   :license {:name "Eclipse Public License"
